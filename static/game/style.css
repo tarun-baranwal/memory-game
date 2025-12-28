@@ -1,0 +1,391 @@
+/* ================== GENERAL ================== */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* ================== CARD GRID ================== */
+#game {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* ================== CARD FLIP ================== */
+.card {
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.open .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.card-front {
+    background: #fff;
+    color: black;
+    border: 2px solid #ccc;
+}
+
+.card-back {
+    background: #ff6347;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* ================== BUTTONS ================== */
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    background: #1e90ff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0d6efd;
+}
+
+/* ================== STATS ================== */
+#stats {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* ================== FORMS ================== */
+form input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.card-front, .card-back {
+    font-size: 50px; /* Increase for larger emojis */
+}
+/* ================== AUTH CONTAINER ================== */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    font-family: Arial, sans-serif;
+}
+
+/* ================== AUTH CARD ================== */
+.auth-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.auth-card:hover {
+    transform: translateY(-5px);
+}
+
+.auth-card h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.auth-card input:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 5px rgba(30,144,255,0.5);
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #1e90ff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.auth-card button:hover {
+    background: #0d6efd;
+}
+
+.auth-card p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.auth-card a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    color: red;
+    font-size: 14px;
+}
+/* ================== GAME CONTAINER ================== */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    font-family: Arial, sans-serif;
+}
+
+/* ================== HEADER ================== */
+header h2 {
+    color: #fff;
+    margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+header p {
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+/* ================== STATS ================== */
+.stats {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* ================== CARD GRID ================== */
+#game {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 15px;
+    justify-content: center;
+}
+
+/* ================== CARD FLIP ================== */
+.card {
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.open .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card-front {
+    background: #ffffff;
+}
+
+.card-back {
+    background: #ff6347;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* ================== BUTTONS ================== */
+.restart-btn, .leaderboard-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #1e90ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.restart-btn:hover, .leaderboard-btn:hover {
+    background: #0d6efd;
+    transform: translateY(-3px);
+}
+.card:hover {
+    transform: scale(1.05);
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+/* ================== LEADERBOARD CONTAINER ================== */
+.leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    font-family: Arial, sans-serif;
+}
+
+/* ================== HEADER ================== */
+header h2 {
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+header p {
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+/* ================== LEADERBOARD CARD ================== */
+.leaderboard-card {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 400px;
+    max-width: 90%;
+    margin-bottom: 20px;
+}
+
+.leaderboard-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: center;
+}
+
+.leaderboard-card th, .leaderboard-card td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.leaderboard-card th {
+    background: #1e90ff;
+    color: white;
+}
+
+.leaderboard-card tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.leaderboard-card tr:hover {
+    background: #e0f7ff;
+}
+
+/* ================== BUTTONS ================== */
+.leaderboard-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.leaderboard-buttons .restart-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #1e90ff;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.leaderboard-buttons .restart-btn:hover {
+    background: #0d6efd;
+    transform: translateY(-3px);
+}
+.leaderboard-card tbody tr:nth-child(1) {
+    background: #ffd700; /* Gold */
+}
+.leaderboard-card tbody tr:nth-child(2) {
+    background: #c0c0c0; /* Silver */
+}
+.leaderboard-card tbody tr:nth-child(3) {
+    background: #cd7f32; /* Bronze */
+}
